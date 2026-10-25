@@ -297,7 +297,9 @@ fn cron_parser() -> &'static CronParser {
   })
 }
 
-pub(crate) fn validate_cron_schedule(schedule: &str) -> anyhow::Result<()> {
+pub(crate) fn validate_cron_schedule(
+  schedule: &str,
+) -> anyhow::Result<()> {
   cron_parser()
     .parse(schedule)
     .context("Invalid CRON schedule")?;
